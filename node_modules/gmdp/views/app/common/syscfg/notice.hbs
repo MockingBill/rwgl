@@ -1,0 +1,376 @@
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="widget">
+            <div class="widget-body">
+                <div class="easyui-layout" data-options="fit:true,border:false" style="width: 800px; height:580px;background-color: #fbfbfb;">
+                    <div data-options="region:'center',border:false" style="overflow-x:hidden;overflow-y:hidden">
+                        <div id="toolbar" class="row tbRow" style="">
+                            <div class="col-xs-2 col-md-2">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default" onclick="openPage('新增系统公告',null,doAddNotice)"><i class="fa fa-plus"></i>新增</button>
+                                    <button type="button" class="btn btn-default" onclick="toEdit()"><i class="fa fa-edit"></i>修改</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-10 col-md-10 text-right">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="inputSysId">所属系统：</label>
+                                            <input id="inputSysId" name="inputSysId" style="width: 180px;height:31px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="filterParam2">公告所属角色：</label>
+                                            <input id="filterParam2" name="filterParam2" style="width:180px;height:31px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="filterParam3">公告状态：</label>
+                                            <select id="filterParam3" class="easyui-combobox form-control" data-options="editable:false,panelHeight:75" style="width:55px;height:31px;">
+                                                <option value="-1">所有</option>
+                                                <option value="1">正常</option>
+                                                <option value="0">禁用</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="input" id="filterParam4" class="form-control" style="width:200px;" placeholder="公告标题"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button" onclick="doSearch()"><i class="fa fa-search"></i>查询</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <table id="noticeDataTable">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- noticeModal -->
+<div id="noticeModal" class="mydialog">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <form id="noticeForm" class="form-horizontal form-bordered" role="form">
+                    <div class="form-group">
+                    <label for="notice_title" class="col-sm-2 control-label no-padding-right">公告标题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="easyui-validatebox form-control" data-options="required:true" name="notice_title" id="notice_title" placeholder="请输入公告标题" style="width:50%;height:31px;">
+                        <input type="hidden" name="notice_author" value="{{currentUser.user_name}}">
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label for="notice_system" class="col-sm-2 control-label no-padding-right">公告所属系统</label>
+                        <div class="col-sm-10">
+                            <input id="notice_system" class="easyui-combobox form-control" data-options="required:true" name="notice_system" style="width:50%;height:31px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notice_role" class="col-sm-2 control-label no-padding-right">公告所属角色</label>
+                        <div class="col-sm-10">
+                            <input id="notice_role" class="easyui-combobox form-control" data-options="required:true" name="notice_role" style="width:50%;height:31px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notice_status" class="col-sm-2 control-label no-padding-right">公告状态</label>
+                        <div class="col-sm-10">
+                            <select name="notice_status" id="notice_status" class="easyui-combobox" data-options="editable:false,required:true,panelHeight:50" style="width:70px;height:31px;">
+                                <option value="1">正常</option>
+                                <option value="0">禁用</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notice_info" class="col-sm-2 control-label no-padding-right">公告内容</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="4" name="notice_info" id="notice_info" placeholder="请输入公告内容" style="width:70%;"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    /**
+     * @author ZhaoJing
+     * 扩展javaScriptDate类型工具js
+     * 实现格式化日期功能
+     */
+    Date.prototype.format = function(format){
+        if(isNaN(this.getMonth())){
+            return '';
+        }
+        if(!format){
+            format = 'yyyy-MM-dd hh:mm:ss';
+        }
+        var o = {
+            //month
+            "M+" : this.getMonth() + 1,
+            //day
+            "d+" : this.getDate(),
+            //hour
+            "h+" : this.getHours(),
+            //minute
+            "m+" : this.getMinutes(),
+            //second
+            "s+" : this.getSeconds(),
+            //quarter
+            "q+" : Math.floor((this.getMonth() + 3) / 3),
+            //millisecond
+            "s" : this.getMilliseconds()
+        };
+        if(/(y+)/.test(format)){
+            format = format.replace(RegExp.$1,(this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for(var k in o){
+            if(new RegExp("(" + k + ")").test(format)){
+                format = format.replace(RegExp.$1,RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+            }
+        }
+        return format;
+    };
+
+    var currentSysId = '{{currentUser.user_sys._id}}';
+    $(document).ready(function(){
+        loadSystemCombobox('inputSysId',function(rec){
+            loadRoleCombobox('filterParam2',rec._id);
+        },function(){});
+        loadRoleCombobox('filterParam2',currentSysId,function(){});
+        loadNoticeDataGrid();
+    });
+
+    function loadSystemCombobox(id,fun1,fun2){
+        $('#'+id).combobox({
+            method: 'get',
+            url: '{{projcfg.appurl}}/public/sysData',
+            valueField:'_id',
+            textField:'sys_name',
+            value:currentSysId,
+            editable:false,
+            onSelect: fun1,
+            onLoadSuccess:fun2
+        });
+    }
+
+    function loadRoleCombobox(id,sysId,fun){
+        $('#'+id).combobox({
+            method: 'get',
+            url: '{{projcfg.appurl}}/admin/api/common/uum/role',
+            valueField:'_id',
+            textField:'role_name',
+            editable:false,
+            loader:function(param,success,error) {
+                $.ajax({
+                    method:'get',
+                    url:'{{projcfg.appurl}}/admin/api/common/uum/role',
+                    dataType: 'json',
+                    data:{sys_id:sysId},
+                    success: function (data) {
+                        var role = {
+                            _id : -1,
+                            role_name : '所有角色'
+                        }
+                        data.rows.splice(0,0,role);
+                        success(data.rows);
+                    }
+                });
+            },
+            onLoadSuccess:fun
+        });
+    }
+
+    function loadNoticeDataGrid(){
+        // 加载公告列表
+        $('#noticeDataTable').datagrid({
+            url: '{{projcfg.appurl}}/admin/api/common/syscfg/notice',
+            method:'get',
+            queryParams:{notice_system:currentSysId},
+            rownumbers:true,
+            striped:true,
+            fitColumns:true,
+            border:true,
+            toolbar: '#toolbar',
+            fit:true,
+            singleSelect:true,
+            selectOnCheck:true,
+            checkOnSelect:true,
+            columns:[[
+                {"field":'_id',checkbox:true},
+                {"field": "notice_title","title":"公告标题","width":30},
+                {"field": "notice_system",hidden:true},
+                {"field": "notice_role","title":"所属角色","width":30,
+                    "formatter":function (value, rowData,rowIndex) {
+                        if(value){
+                            return value.role_name;
+                        }else{
+                            return "所有角色";
+                        }
+                    }
+                },
+                {"field": "notice_info","title":"公告内容","width":100},
+                {"field": "notice_status","title":"状态","width":30,
+                    "formatter":function (value, rowData,rowIndex) {
+                        if(value == 1){
+                            return '<span class="success">正常</span>';
+                        }else if(value == 0){
+                            return '<span class="danger">禁用</span>';
+                        }
+                    }
+                },
+                {"field": "notice_author","title":"发布人","width":30},
+                {"field": "notice_time","title":"发布时间","width":50,
+                    formatter : function(value, rowData, rowIndex) {
+                        return new Date(value).format();
+                    }
+                }
+            ]],
+            onLoadSuccess:function(json) {
+                if(!json.success) {
+                    msgError(json.msg + ',错误代码:' + json.code);
+                }
+            },
+            onLoadError:function() {
+                msgError('加载数据出现时发生错误,请稍候重试...');
+            },
+            pagination:true,
+            loadMsg:'正在加载...'
+        });
+    }
+
+    function doSearch() {
+        $('#noticeDataTable').datagrid('reload',{
+            'notice_title':$.trim($('#filterParam4').val()),
+            'notice_role':$('#filterParam2').combobox('getValue'),
+            'notice_status':$('#filterParam3').combobox('getValue'),
+            'notice_system':$('#inputSysId').combobox('getValue')
+        });
+    }
+
+    function doAddNotice() {
+        // 验证表单
+        var validate = $('#noticeForm').form('validate');
+        if(!validate) {
+            return false;
+        }
+        $.ajax({
+            url: '{{projcfg.appurl}}/admin/api/common/syscfg/notice',
+            type: 'post',
+            data: $('#noticeForm').serializeJson(),
+            success: function (data) {
+                if(data.success) {
+                    msgSuccess(data.msg);
+                    closeDialog();
+                    doSearch();
+                }
+                else {
+                    msgError(data.msg+',错误代码:'+data.code);
+                }
+            }
+        });
+    }
+
+    // 关闭窗口
+    function closeDialog() {
+        $('#noticeModal').dialog('close');
+        clear();
+    }
+
+    function openPage(title, value, callback){
+        if(value == null){
+            loadSystemCombobox('notice_system',function(rec){
+                loadRoleCombobox('notice_role',rec._id,function(){});
+            },function(){});
+            loadRoleCombobox('notice_role',currentSysId,function(){});
+        }
+        $('#noticeModal').show();
+        $('#noticeModal').mydialog({
+            title:title,
+            width: 700,
+            height: 500,
+            top:150,
+            modal: true,
+            myButtons:[
+                {
+                    text:'确定',
+                    btnCls:'btn btn-blue',
+                    handler:function(){
+                        callback(value);
+                    }
+                },
+                {
+                    text:'关闭',
+                    btnCls:'btn btn-danger',
+                    handler:function(){
+                        closeDialog();
+                    }
+                }
+            ]
+        });
+    }
+
+    function toEdit() {
+        // 获得选择行
+        var rows = $('#noticeDataTable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行修改');
+            return false;
+        }
+        $('#noticeForm').form('load',rows[0]);
+        //加载系统
+        loadSystemCombobox('notice_system',function(rec){
+            loadRoleCombobox('notice_role',rec._id,function(){});
+        },function(){
+            $(this).combobox('setValue',rows[0].notice_system);
+        });
+        loadRoleCombobox('notice_role',rows[0].notice_system,function() {
+            if (rows[0].notice_role) {
+                $(this).combobox('setValue', rows[0].notice_role._id);
+            } else {
+                $(this).combobox('setValue', -1);
+            }
+        });
+        openPage("修改系统公告",rows[0]._id,doEdit);
+    }
+
+    function doEdit(value) {
+        // 验证表单
+        var validate = $('#noticeForm').form('validate');
+        if(!validate) {
+            return false;
+        }
+        $.ajax({
+            url: '{{projcfg.appurl}}/admin/api/common/syscfg/notice/'+value,
+            type: 'put',
+            data: $('#noticeForm').serializeJson(),
+            success: function (data) {
+                if(data.success) {
+                    msgSuccess(data.msg);
+                    closeDialog();
+                    doSearch();
+                    clear();
+                }
+                else {
+                    msgError(data.msg+',错误代码:'+data.code);
+                }
+            }
+        });
+    }
+
+    // 清空新增表单数据
+    function clear() {
+        $("input[name='notice_title']").val('');
+        $("textarea[name='notice_info']").val('');
+    }
+
+</script>

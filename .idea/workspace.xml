@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/project/pm/services/pm_service.js" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d59ec665-0e6a-4247-acb0-c1d052e79066" name="Default" comment="" />
+    <ignored path="exam.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="exam" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="core_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/services/core_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1653">
+              <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gmdp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/gmdp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pm_service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/project/pm/services/pm_service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4756">
+              <caret line="164" column="14" lean-forward="false" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pm_model.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/project/pm/models/pm_model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2813">
+              <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cas_client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/middlewares/cas_client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/utils/app_utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/models/app_model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>passEdit</find>
+      <find>{{projcfg.appurl}}</find>
+      <find>{{</find>
+      <find>respJsonData</find>
+      <find>editProFile</find>
+      <find>userInfView</find>
+      <find>updateuserp</find>
+      <find>test</find>
+      <find>or</find>
+      <find>in</find>
+      <find>ajax</find>
+      <find>getU</find>
+      <find>up</find>
+      <find>simpledatatable0</find>
+      <find>simpledatatable</find>
+      <find>mem</find>
+      <find>console.l</find>
+      <find>getC</find>
+      <find>mouthDay</find>
+      <find>getSysMenu</find>
+      <find>session</find>
+      <find>login</find>
+      <find>pop</find>
+      <find>userOrgModal</find>
+      <find>post</find>
+      <find>put</find>
+      <find>修改</find>
+      <find>__dirname</find>
+      <find>mongoose</find>
+      <find>save</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>height:300</replace>
+      <replace>do</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\中移动\nodejsUI\rwgl\routes</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/bin/exam" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/UNCompleted.hbs" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/ceshi.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/ceshi.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/aboutCoreNetwork.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/testData.js" />
+        <option value="$PROJECT_DIR$/app/project/demo/models/insertData.js" />
+        <option value="$PROJECT_DIR$/app/project/pm/routes/testData.js" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/UnionTableQuery.js" />
+        <option value="$PROJECT_DIR$/views/app/project/demo/student_eui.hbs" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/userDefine.hbs" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/aboutTranNetWork.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/models/pm_notice_model.js" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/insertData.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/unCheckNotice.hbs" />
+        <option value="$PROJECT_DIR$/app/project/demo/services/student_service.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/notice.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/test.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/login.hbs" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/views/index.hbs" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/test.hbs" />
+        <option value="$PROJECT_DIR$/views/app/setting.hbs" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/views/app/index.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/test2.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/myTask.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/test/test1.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/completed.hbs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/app/project/pm/routes/pm.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/home.hbs" />
+        <option value="$PROJECT_DIR$/app/project/pm/services/pm_service.js" />
+        <option value="$PROJECT_DIR$/views/themes/beyond/layout_login.hbs" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/lib/common/core/routes/index.js" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/lib/common/core/services/core_service.js" />
+        <option value="$PROJECT_DIR$/views/themes/beyond/layout.hbs" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/lib/common/uum/routes/user.js" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/todoList.hbs" />
+        <option value="$PROJECT_DIR$/views/app/project/pm/unCompleted.hbs" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/node_modules/gmdp/lib/common/core/middlewares/auth_check.js" />
+        <option value="$PROJECT_DIR$/app/project/pm/models/pm_model.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <exe-path />
+    <config-path />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/public/static/flume/js/bootstrap/package.json" />
+    <dismissed value="$PROJECT_DIR$/public/static/flume/js/jquery-ui/package.json" />
+    <dismissed value="$PROJECT_DIR$/public/static/flume/js/jsPlumb/package.json" />
+    <dismissed value="$PROJECT_DIR$/public/static/flume/js/underscore/package.json" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="pm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="pm" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="pm" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="pm" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gmdp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gmdp" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gmdp" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gmdp" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rwgl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rwgl" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gmdp" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Bower" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="last_opened_file_path" value="D:/myGitHubProject/myFrame" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file://D:/nodeWorkSpace/rwgl/02 Code/rwgl/views/themes/beyond/layout_login.hbs&#10;top_logo&#9;FILE&#9;file://D:/nodeWorkSpace/rwgl/02 Code/rwgl/public/static/images/top_logo.png&#10;login_bg&#9;FILE&#9;file://D:/nodeWorkSpace/rwgl/02 Code/rwgl/public/static/images/login_bg.jpg&#10;login_log&#9;FILE&#9;file://D:/nodeWorkSpace/rwgl/02 Code/rwgl/public/static/images/login_logo.png" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\public\static\images\icon" />
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\public\static\images" />
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\public\static\css\login" />
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\public\static\js\backstretch" />
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\public\static\js\ichart" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\nodeWorkSpace\rwgl\02 Code\rwgl\app\project\pm\routes" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.rwgl">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration name="insertData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="insertData.js" working-dir="$PROJECT_DIR$/app/project/pm/test" />
+    <configuration name="pm_service.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="pm_service.js" working-dir="$PROJECT_DIR$/app/project/pm/services" />
+    <configuration name="rwgl" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" path-to-js-file="./bin/rwgl" working-dir="$PROJECT_DIR$">
+      <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension">
+        <option name="envVars">
+          <list />
+        </option>
+        <option name="extraHosts">
+          <list />
+        </option>
+        <option name="links">
+          <list />
+        </option>
+        <option name="networkDisabled" value="false" />
+        <option name="networkMode" value="bridge" />
+        <option name="portBindings">
+          <list />
+        </option>
+        <option name="publishAllPorts" value="false" />
+        <option name="version" value="1" />
+        <option name="volumeBindings">
+          <list />
+        </option>
+      </EXTENSION>
+    </configuration>
+    <configuration name="test1.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="test1.js" working-dir="$PROJECT_DIR$/app/project/pm/test" />
+    <configuration name="test2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="test2.js" working-dir="$PROJECT_DIR$/app/project/pm/test" />
+    <configuration name="test.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/app/project/pm/test" />
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.rwgl" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.test.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.insertData.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.test1.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.test2.js" />
+      <item index="5" class="java.lang.String" itemvalue="Node.js.pm_service.js" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.pm_service.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.test1.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.test2.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.test.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.insertData.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d59ec665-0e6a-4247-acb0-c1d052e79066" name="Default" comment="" />
+      <created>1490755960563</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1490755960563</updated>
+      <workItem from="1490755961763" duration="4672000" />
+      <workItem from="1490769462417" duration="3441000" />
+      <workItem from="1500880312768" duration="628000" />
+      <workItem from="1500881014270" duration="6186000" />
+      <workItem from="1501031252316" duration="1336000" />
+      <workItem from="1501040125609" duration="266000" />
+      <workItem from="1501078987593" duration="702000" />
+      <workItem from="1501121596330" duration="649000" />
+      <workItem from="1501122475593" duration="7031000" />
+      <workItem from="1501228332403" duration="2717000" />
+      <workItem from="1501639919295" duration="862000" />
+      <workItem from="1502241401334" duration="16376000" />
+      <workItem from="1502267179238" duration="983000" />
+      <workItem from="1502330347321" duration="16557000" />
+      <workItem from="1502355333316" duration="16000" />
+      <workItem from="1502413891746" duration="2774000" />
+      <workItem from="1502418093797" duration="18132000" />
+      <workItem from="1502672879201" duration="20427000" />
+      <workItem from="1502759170499" duration="21904000" />
+      <workItem from="1502844856246" duration="7090000" />
+      <workItem from="1502852883764" duration="1242000" />
+      <workItem from="1502861816974" duration="8349000" />
+      <workItem from="1502870321310" duration="3831000" />
+      <workItem from="1502932091520" duration="8387000" />
+      <workItem from="1502940552123" duration="9059000" />
+      <workItem from="1502956605767" duration="1033000" />
+      <workItem from="1502958086618" duration="18000" />
+      <workItem from="1503018690625" duration="15644000" />
+      <workItem from="1503277444861" duration="21109000" />
+      <workItem from="1503364118965" duration="1724000" />
+      <workItem from="1503367017399" duration="12767000" />
+      <workItem from="1503389102380" duration="3352000" />
+      <workItem from="1503449970123" duration="14935000" />
+      <workItem from="1503474312875" duration="329000" />
+      <workItem from="1503474997420" duration="3867000" />
+      <workItem from="1503536071324" duration="22985000" />
+      <workItem from="1503623392813" duration="14032000" />
+      <workItem from="1503644913148" duration="123000" />
+      <workItem from="1503645315571" duration="641000" />
+      <workItem from="1503647444244" duration="2419000" />
+      <workItem from="1503882354521" duration="19596000" />
+      <workItem from="1503968836337" duration="19292000" />
+      <workItem from="1504057638042" duration="4417000" />
+      <workItem from="1504063319757" duration="7687000" />
+      <workItem from="1504082526415" duration="692000" />
+      <workItem from="1504083547551" duration="133000" />
+      <workItem from="1504142684348" duration="2588000" />
+      <workItem from="1504145497768" duration="29000" />
+      <workItem from="1504146099616" duration="16181000" />
+      <workItem from="1504228012665" duration="1472000" />
+      <workItem from="1504237610365" duration="383000" />
+      <workItem from="1504243971323" duration="2716000" />
+      <workItem from="1504247247932" duration="2667000" />
+      <workItem from="1504251847229" duration="2170000" />
+      <workItem from="1504486559686" duration="6726000" />
+      <workItem from="1504505546068" duration="7189000" />
+      <workItem from="1504513106841" duration="351000" />
+      <workItem from="1504513708470" duration="3836000" />
+      <workItem from="1504517669359" duration="616000" />
+      <workItem from="1504593144266" duration="6152000" />
+      <workItem from="1504664938132" duration="599000" />
+      <workItem from="1504668907589" duration="1065000" />
+      <workItem from="1504671991092" duration="1397000" />
+      <workItem from="1504675918588" duration="7291000" />
+      <workItem from="1504688356075" duration="512000" />
+      <workItem from="1504746074803" duration="6706000" />
+      <workItem from="1504753441478" duration="14912000" />
+      <workItem from="1504832065547" duration="6496000" />
+      <workItem from="1504840432160" duration="6919000" />
+      <workItem from="1504849167629" duration="7219000" />
+      <workItem from="1504856846256" duration="5905000" />
+      <workItem from="1504883124315" duration="206000" />
+      <workItem from="1505091328064" duration="7592000" />
+      <workItem from="1505099879180" duration="9966000" />
+      <workItem from="1505178240525" duration="3948000" />
+      <workItem from="1505196489469" duration="8162000" />
+      <workItem from="1505264159966" duration="7608000" />
+      <workItem from="1505282928659" duration="1698000" />
+      <workItem from="1505290959800" duration="1087000" />
+      <workItem from="1505316860930" duration="199000" />
+      <workItem from="1505350683783" duration="1735000" />
+      <workItem from="1505372856513" duration="4000" />
+      <workItem from="1505453185294" duration="4246000" />
+      <workItem from="1505465609248" duration="139000" />
+      <workItem from="1505704898133" duration="1772000" />
+      <workItem from="1505714298269" duration="6851000" />
+      <workItem from="1505785141050" duration="5000" />
+      <workItem from="1505786167558" duration="6410000" />
+      <workItem from="1505800105002" duration="2177000" />
+      <workItem from="1505869426142" duration="6081000" />
+      <workItem from="1505877659463" duration="459000" />
+      <workItem from="1505956611699" duration="3020000" />
+      <workItem from="1505967916887" duration="87000" />
+      <workItem from="1505973376793" duration="76000" />
+      <workItem from="1505973754984" duration="1295000" />
+      <workItem from="1506041791289" duration="7235000" />
+      <workItem from="1506059963556" duration="3112000" />
+      <workItem from="1506063488363" duration="5952000" />
+      <workItem from="1506301922683" duration="3362000" />
+      <workItem from="1506313711806" duration="2000" />
+      <workItem from="1506320123702" duration="1027000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="538022000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21651785" sideWeight="0.4581498" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39408866" sideWeight="0.110119045" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23363096" sideWeight="0.539823" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47454843" sideWeight="0.88988096" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26436782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22167487" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="89" y="89" width="1742" height="902" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="文档" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="89" y="89" width="1742" height="902" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4958949" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39408866" sideWeight="0.110119045" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="89" y="89" width="1742" height="902" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23363096" sideWeight="0.539823" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19376026" sideWeight="0.88988096" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26600984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="文档" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="89" y="89" width="1742" height="902" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24851191" sideWeight="0.4581498" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4958949" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22167487" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="41" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/services/core_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/gmdp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/project/pm/services/pm_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4756">
+          <caret line="164" column="14" lean-forward="false" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/middlewares/cas_client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2813">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/utils/app_utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/models/app_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/project/pm/models/pm_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2146">
+          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/services/core_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1653">
+          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/gmdp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/project/pm/services/pm_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4756">
+          <caret line="164" column="14" lean-forward="false" selection-start-line="164" selection-start-column="14" selection-end-line="164" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2813">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/middlewares/cas_client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/utils/app_utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gmdp/lib/common/core/models/app_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/project/pm/models/pm_model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

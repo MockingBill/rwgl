@@ -1,0 +1,83 @@
+# gmdp
+贵州移动自主研发平台
+
+## 环境要求
+- NodeJS：v4.4.1+
+- Mongodb：v3.2.x+
+- Memcached：v1.4.25+
+- PM2：v1.0.2+，生产环境
+
+## 安装工程所需模块
+- WebStorm中运行
+```sh
+选中package.json，右键npm update
+```
+- 命令行
+工程根目录下，执行
+```sh
+npm update
+```
+
+## 安装gmdp模块
+- 批处理文件
+工程根目录下，双击执行
+```sh
+gmdp-install.bat
+```
+- 命令行
+工程根目录下，执行
+```sh
+npm --registry http://10.201.250.40:4873 install gmdp
+```
+
+## 使用gmdp模块
+- 引入gmdp
+```js
+var gmdp = require('gmdp').init_gmdp;
+```
+- 使用gmdp公共JS
+```js
+// 使用mongoose工具类，获取mongoose实例
+var mongoUtils = gmdp.core_mongoose_utils;
+// 使用框架工具类，封装了常用的方法，如：返回消息、日期格式化等方法
+var appUtils = gmdp.core_app_utils;
+// 使用memcached工具类，封装了缓存的存取方法
+var memcachedUtis = gmdp.core_memcached_utils;
+// 使用tree工具类
+var treeUtils = gmdp.core_tree_utils;
+// 使用core_service，封装了用户登录等方法，用于登录流程改变时调用
+var core_service = gmdp.core_service;
+```
+
+## 修改config配置文件
+config.js位于工程根目录下，用于定义工程配置信息，如：工程访问时的basePath、mongodb的连接信息、session配置信息、memcached配置信息、route映射信息等
+- 必改配置信息
+```js
+project下的appid、appname、apptitle等信息
+session下的secret、key、mongodb_url等信息
+routes下的mapping等信息
+mongodb下的url等信息
+memcached下的server_locations等信息
+auth下的auth_type、cas_server_url、password、password_daily_err_count等信息
+```
+
+## 运行工程
+- WebStorm中
+```sh
+选中bin目录下的www文件，右键Run www
+```
+- 命令行
+工程根目录下
+```sh
+node bin\www
+```
+- 生产环境下
+工程根目录下
+```sh
+pm2 start bin\www -i 进程数
+```
+
+
+
+
+

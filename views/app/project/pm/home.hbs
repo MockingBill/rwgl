@@ -1,0 +1,276 @@
+
+<div class="easyui-panel" style="width:1100px;height:700px;padding:10px">
+    <div class="row">
+    <div class="col-xs-6 col-md-6">
+        <!--柱形图div-->
+        <div id="canvasDiv" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+    </div>
+    <div class="col-xs-6 col-md-6">
+        <!--日历div-->
+        <div id="pm_calendar" class="easyui-calendar" style="width:90%;height:110%;margin: 20px 0px 20px 20px;" align="center" >
+        </div>
+    </div>
+    </div>
+    <!--任务数据DataGrid-->
+    <table id="simpledatatable"></table>
+</div>
+<!--接收人窗体-->
+<div class="mydialog">
+    <div id="receiveModal">
+        <table id="receiveTable" width="100%;">
+
+        </table>
+    </div>
+</div>
+<!--接收人窗体结束-->
+<script>
+    //用于存储有哪些日期存在任务，在日历上作为任务提醒。
+    var mouthDay;
+    $(document).ready(function () {
+        $(function () {
+            $('#simpledatatable').datagrid({
+                url:'{{projcfg.appurl}}/api/pm/pm/',
+                method:'get',
+                height:400,
+                striped:true,
+                fitColumns:false,
+                border:true,
+                singleSelect:true,
+                selectOnCheck:false,
+                columns:[[
+                    {field: '_id', checkbox: true},
+                    {"field": "pm_name", "title": "任务名称", "width": 128,"sortable":true},
+                    {"field": "pm_content", "title": "任务内容", "width": 145},
+                    {"field": "pm_responsibilityRoom", "title": "责任室", "width": 90},
+                    {"field": "pm_responsibilityPerson", "title": "责任人", "width": 90},
+                    {"field": "pm_begin_date", "title": "开始时间", "width": 89,"sortable":true},
+                    {"field": "pm_end_date", "title": "结束时间", "width": 89,"sortable":true},
+                    {
+                        "field": "pm_type", "title": "任务类型", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            switch (data) {
+                                case '0':
+                                    return '项目管理';
+                                case '1':
+                                    return '日程安排';
+                                case '2':
+                                    return '工作计划';
+                            }
+                        }
+                    },
+                    {
+                        "field": "pm_speed_of_progress", "title": "任务进度", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            return data + '%';
+                        }
+                    },
+                    {
+                        "field": "pm_urgent_degree", "title": "紧急程度", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            switch (data) {
+                                case '0':
+                                    return '一般';
+                                case '1':
+                                    return '紧急';
+                                case '2':
+                                    return '非常紧急';
+                            }
+                        }
+                    },
+                    {"field": "pm_sendPerson", "title": "发送人", "width": 60},
+                    {"field": "pm_receivePerson", "title": "接收人", "width": 100,"formatter":
+                            function (data, rowData, rowIndex) {
+                                var param = JSON.stringify(data);
+                                return "<button type='button' class='btn btn-default' onclick='lookUp(" + param + ")' data-title='查看' ><i  class='glyphicon glyphicon-zoom-in' > 查看</i></button>";
+                            }
+                    }
+
+                ]],
+                //双击某行数据进入对应的任务状态菜单下
+                onDblClickRow:function(rowIndex, rowData){
+                        if(rowData.pm_status==='0')
+                        window.location.href="/project/todoList";
+                    else if(rowData.pm_status==='1')
+                        window.location.href="/project/unCompleted";
+                    else if(rowData.pm_status==='2')
+                        window.location.href="/project/completed";
+                },
+                onLoadSuccess:function(json) {
+                    if(!json.success) {
+
+                        msgError(json.msg);
+                    }
+                },
+                onLoadError:function() {
+                    msgError('加载数据出现时发生错误,请稍候重试...');
+                },
+                pagination:true,
+                loadMsg:'正在加载...'
+            });
+        });
+        //获取初始化数据(所有任务的统计数字、当天任务的详细情况、哪些日期有任务最为提醒)
+        $.ajax({
+            url: '{{projcfg.appurl}}/api/pm/pm/getCount',
+            data: {},
+            type: 'get',
+            success: function (data) {
+                if (data.success) {
+                    mouthDay = data.data.resu;
+                    $("#pm_calendar").calendar({
+                        formatter:formatDay
+                    });
+                    //统计任务总数，用于柱形图纵坐标的设置。
+                    var len = 0;
+                    for (var i in data.data.chart) {
+                        var a=data.data.chart[i].value;
+                        if(a!=null&&a!=undefined){
+                            len = len + a;
+                        }
+
+                    }
+                   //保证柱形图纵坐标最大值一定是个能被5整除的整数。
+                    var a=len%5;
+                    if(a!=0)
+                    len=len+(5-a);
+                    draw(data.data.chart, len);
+                }
+                else {
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+
+    });
+
+
+//获取日期选择事件，发送ajax获取当天的数据。
+    $('#pm_calendar').calendar({
+        onSelect: function(date){
+            $.ajax({
+                url: '{{projcfg.appurl}}/api/pm/pm/getCount',
+                data:{year:date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()},
+                type: 'get',
+                success: function (data) {
+                    if (data.success) {
+                        var len=0;
+                        for(var i in data.data.chart){
+                            len=len+data.data.chart[i].value
+                        }
+                        draw(data.data.chart,len);
+                        $('#simpledatatable').datagrid('reload',{pm_end_date:date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()});
+
+                    }
+                    else {
+                        msgError(data.msg + ',错误代码:' + data.code);
+                    }
+                }
+            });
+        }
+        
+    });
+//绘制柱形图
+   function draw(data,len) {
+       new iChart.Column2D({
+           render : 'canvasDiv',
+           data: data,
+           title : '当前任务统计情况',
+           showpercent:true,
+           decimalsnum:2,
+           width : 400,
+           height : 300,
+           coordinate:{
+               background_color:'#fefefe',
+               scale:[{
+                   position:'left',
+                   start_scale:0,
+                   end_scale:len,
+                   scale_space:len/5,
+                   listeners:{
+                       parseText:function(t,x,y){
+                           return {text:t+'个'}
+                       }
+                   }
+               }]
+           }
+       }).draw();
+
+   }
+
+
+//用于标记日历上有任务的日期，用于任务提醒。
+    function formatDay(date){
+       var y=date.getFullYear();
+        var m = date.getMonth()+1;
+       var d = date.getDate();
+       //var opts = $(this).calendar('options');
+
+
+        for(var i=0;i<mouthDay.length; i++){
+            var arr=mouthDay[i].date.toString().split('-');
+            yyy=Number(arr[0]);
+            mmm=Number(arr[1]);
+            dddd=Number(arr[2]);
+
+            if (y==yyy&&m== mmm && d == dddd){
+                return '<span class="badge badge-danger">'+mouthDay[i].num+'</span>' + d + '';
+            }
+
+        }
+       return d;
+   }
+    /**
+     * 查看接收人
+     * @returns {boolean}
+     */
+    function lookUp(vv) {
+        var noRepeat={};
+        receiveArr=[];
+        //去掉重复数据
+        for(var i=0;i<vv.length; i++){
+            noRepeat[vv[i].name]=vv[i].name;
+        }
+        //遍历去重后的数据
+        for(var i in noRepeat){
+            receiveArr.push(noRepeat[i]);
+        }
+        $('#receiveTable').prepend('<ul class="list-group" >');
+        for (var i=0;i<receiveArr.length; i++)
+            $('#receiveTable').prepend('<li class="list-group-item" align="center">'+receiveArr[i]+'</li>');
+        $('#receiveTable').append('</ul>');
+
+        $('#receiveModal').show();
+        //获取滚动条到顶部的垂直高度
+        var scrollHei=$(document).scrollTop();
+        $('#receiveModal').mydialog({
+            title: '接收人',
+            width: 200,
+            height: 300,
+            top:scrollHei+100,
+            modal: true,
+            myButtons: [
+                {
+                    text: '关闭',
+                    btnCls: 'btn btn-danger',
+                    handler: function () {
+                        $('#receiveTable').empty();
+                        $('#receiveModal').dialog('close');
+                    }
+                }
+            ]
+        });
+    }
+
+
+
+</script>
+
+<style scoped="scoped">
+    .md{
+        height:16px;
+        line-height:16px;
+        background-position:2px center;
+        text-align:right;
+        font-weight:bold;
+        color: #ff3d3c;
+    }
+</style>

@@ -1,0 +1,1 @@
+npm --registry http://10.201.250.40:4873 install gmdp

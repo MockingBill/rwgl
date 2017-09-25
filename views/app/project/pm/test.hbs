@@ -1,0 +1,109 @@
+<div id="tt" class="easyui-tabs" >
+
+    <div title="遵义" id="zunyi"  style="padding:10px">
+    </div>
+    <div title="毕节" id="bijie" style="padding:10px">
+    </div>
+    <div title="安顺" id="anshun" style="padding:10px">
+
+    </div>
+    <div title="贵阳" id="guiyang" style="padding:10px">
+
+    </div>
+</div>
+
+<div  id="canva">
+    <div class="row">
+        <div class="col-xs-4 col-md-4">
+    <div id="canvasDiv1" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <div id="canvasDiv2" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <div id="canvasDiv3" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-md-4">
+            <div id="canvasDiv4" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <div id="canvasDiv5" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+        <div class="col-xs-4 col-md-4">
+            <div id="canvasDiv6" style="margin: 20px 0px 20px 0px; " align="center" ></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    $('#tt').tabs({
+        border:false,
+        onSelect:function(title){
+
+            var diArr=['#zunyi','#bijie','#anshun','#guyang'];
+            for(var i in diArr){
+                $(diArr[i]).empty();
+            }
+            switch (title){
+                case "遵义":{
+                    $('#zunyi').prepend($('#canva').html());
+                    break;
+                }
+                case "毕节":{
+                    $('#bijie').prepend($('#canva').html());
+
+                    break;
+                }
+                case "安顺":{
+                    $('#anshun').prepend($('#canva').html());
+
+                    break;
+                }
+                case "贵阳":{
+                    $('#guiyang').prepend($('#canva').html());
+
+                    break;
+                }
+            }
+            for(var i=1;i<=6;i++){
+                draw(i);
+            }
+        }
+    });
+    function draw(num) {
+        new iChart.Column2D({
+            render : 'canvasDiv'+num,
+          data:[{name:'ww',value:Math.round(Math.random()*100),color:'#2921d4'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#53cb38'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#c83022'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#85adff'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#c9d4ce'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#5cd4ac'},
+                {name:'ww',value:Math.round(Math.random()*100),color:'#2e7cd4'}],
+            title : '当前任务统计情况',
+            showpercent:true,
+            decimalsnum:2,
+            width : 320,
+            height : 300,
+            coordinate:{
+                background_color:'#fefefe',
+                scale:[{
+                    position:'left',
+                    start_scale:0,
+                    end_scale:100,
+                    scale_space:10,
+                    listeners:{
+                        parseText:function(t,x,y){
+                            return {text:t+'个'}
+                        }
+                    }
+                }]
+            }
+        }).draw();
+
+    }
+</script>

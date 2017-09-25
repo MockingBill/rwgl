@@ -1,0 +1,1118 @@
+<style>
+    .mySpan {
+        font-size: large;
+        color: white;
+        font-weight: bold;
+        padding-left: 20px;
+        z-index:778;
+    }
+</style>
+<!--功能区-->
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div class="widget">
+            <div class="widget-body">
+                <div id="cc" class="easyui-layout" data-options="fit:true,border:false"
+                     style="width:800px; height:580px;background-color: #fbfbfb;">
+                    <div data-options="region:'center',border:false" style="overflow-x:hidden;overflow-y:hidden">
+                        <div id="toolbar" class="row tbRow">
+                            <div class="col-xs-8 col-md-8">
+                                <div class="btn-group" role="group" style="width:800px;" aria-label="...">
+                                    <button type="button" class="btn btn-default azure"
+                                            onclick="openPage('新增任务信息','add', doAdd);"
+                                            data-title="新建">
+                                        <i class="glyphicon glyphicon-plus"></i>新建
+                                    </button>
+                                    <button type="button" class="btn btn-default azure" onclick="toEdit();"
+                                            data-title="修改">
+                                        <i class="glyphicon glyphicon-pencil"></i>修改
+                                    </button>
+                                    <button type="button" class="btn btn-default azure" onclick="doDel();"
+                                            data-title="删除">
+                                        <i class="glyphicon glyphicon-trash"></i>删除
+                                    </button>
+                                    <button type="button" class="btn btn-default azure" onclick="DonePm();"
+                                            data-title="完成任务">
+                                        <i class="glyphicon glyphicon-floppy-disk"></i>完成任务
+                                    </button>
+                                    <button type="button" class="btn btn-default azure" onclick="forWard();"
+                                            data-title="转发任务">
+                                        <i class="glyphicon glyphicon-share-alt"></i>转发
+                                    </button>
+                                    <button type="button" class="btn btn-default azure" onclick="showDetail();"
+                                            data-title="查看详情">
+                                        <i class="glyphicon glyphicon-eye-open"></i>查看
+                                    </button>
+                                    <button type="buuton" class="btn btn-default azure" onclick="openPmRecord();" data-title="任务记录">
+                                        <i class="glyphicon glyphicon-list-alt"></i>任务记录
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-md-4 text-right">
+                                <form id="searchFrom" class="form-inline"  >
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="input" id="sname" name="sname" class="form-control"
+                                                   style="width:200px;" placeholder="任务名">
+                                            <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button"
+                                                                onclick="doSearch()"><i
+                                                                class="fa fa-search"></i>查询</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--主显示页面 easyUI dataGrid-->
+                        <table id="simpledatatable"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--功能区结束-->
+
+<!--新增修改model-->
+<div class="mydialog">
+    <div id="addUpdateModal" align="center">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="pmForm" class="form-horizontal form-bordered" role="form"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="col-sm-9" align="center" style="margin: 5px">
+                            <!--窗口上方留白-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNo" class="col-sm-2 control-label no-padding-right">任务编号</label>
+                        <div class="col-sm-9">
+                            <div class="input-group" style="width: 340px">
+                                <input type="text" class="easyui-validatebox form-control"
+                                       data-options="required:true"
+                                       name="pm_no" id="pm_no1"
+                                       placeholder="请输入任务编号">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" onclick="random();" type="button">随机生成</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务名称</label>
+                        <div class="col-sm-9">
+                            <input  class="easyui-validatebox form-control"
+                                   data-options="required:true"
+                                   style="width:340px;" name="pm_name" id="inputName"
+                                      placeholder="请输入任务名称">
+                            <input type="hidden" name="_id" id="inputId">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMobile"
+                               class="col-sm-2 control-label no-padding-right">任务内容</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true"
+                                   style="width:340px;height: 100px;" name="pm_content" id="inputMobile"
+                                      placeholder="请输入任务内容"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">责任室</label>
+                        <div class="col-sm-9">
+                            <input class="easyui-combobox" id="pm_responsibilityRoom1" name="pm_responsibilityRoom" style="width:340px;height:35px"
+                                   data-options="valueField:'org_fullname',textField:'org_fullname'"  >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAge"
+                               class="col-sm-2 control-label no-padding-right">责任人</label>
+                        <div class="col-sm-9">
+                            <input class="easyui-combobox" id="pm_responsibilityPerson1" name="pm_responsibilityPerson" style="width:340px;height:35px"
+                                   data-options="valueField:'user_name',textField:'user_name'"  >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">开始时间</label>
+                        <div class="col-sm-9">
+                            <input class="easyui-datebox" name="pm_begin_date" style="width:340px;height:35px">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">结束时间</label>
+                        <div class="col-sm-9">
+                            <input class="easyui-datebox" name="pm_end_date"
+                                   style="width:340px;height:35px">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">提醒时间</label>
+                        <div class="col-sm-9">
+                            <input class="easyui-datebox" name="pm_remind_date"
+                                   style="width:340px;height:35px">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务类型</label>
+                        <div class="col-sm-9">
+                            <select name="pm_type" id="pm_type"
+                                    class="easyui-combobox"
+                                    data-options="required:true,editable:false,panelHeight:100"
+                                    style="width:340px;height:34px;">
+                                <option value="0">项目管理</option>
+                                <option value="1">日程安排</option>
+                                <option value="2">工作计划</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务进度</label>
+                        <div class="col-sm-9">
+                            <select name="pm_speed_of_progress" id="pm_speed_of_progress"
+                                    class="easyui-combobox"
+                                    data-options="required:true,editable:false,panelHeight:280"
+                                    style="width:340px;height:34px;">
+                                <option value="0">0%</option>
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+                                <option value="60">60%</option>
+                                <option value="70">70%</option>
+                                <option value="80">80%</option>
+                                <option value="90">90%</option>
+                                <option value="100">100%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">紧急程度</label>
+                        <div class="col-sm-9">
+                            <select name="pm_urgent_degree" id="pm_urgent_degree"
+                                    class="easyui-combobox"
+                                    data-options="required:true,editable:false,panelHeight:100"
+                                    style="width:340px;height:34px;">
+                                <option value="0">一般</option>
+                                <option value="1">紧急</option>
+                                <option value="2">非常紧急</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true"
+                                   style="width:340px" name="pm_remark" id="pm_remark"
+                                   placeholder="请输入任务备注">
+                        </div>
+                    </div>
+                </form>
+                <form id="file-upload" action="#" name="file-upload" enctype='multipart/form-data' method="post">
+                    <div class="form-group" style="margin:20px 10px 15px 10px;">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务附件</label>
+                        <div class="col-sm-9">
+                            <!-- 上传文件form -->
+
+                            <input id="fb" name="pmd_enclosure" multiple='mutiple'
+                                   class="easyui-filebox" style="width:343px;height: 40px"
+                                   data-options="prompt:'支持Word、Excel、rar、zip类型'">
+                            <input type="hidden" name="_id" id="idForUpload">
+                        </div>
+                    </div>
+                </form>
+                <div class="col-sm-9" align="center" style="margin: 5px">
+                    <!--窗口下方留白-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--增加、修改窗口结束-->
+<!--查看窗口窗体开始-->
+<div class="mydialog">
+    <div id="lookUpModal">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="lookUpModal" class="form-horizontal form-bordered" role="form"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="col-sm-9" align="center" style="margin: 5px">
+                            <!--窗口上方留白-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNo"
+                               class="col-sm-2 control-label no-padding-right">任务编号</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_no"
+                                   id="pm_no">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务名称</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_name"
+                                   id="pm_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMobile"
+                               class="col-sm-2 control-label no-padding-right">任务内容</label>
+                        <div class="col-sm-9">
+                            <textarea readonly="on"  class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;height:100px;color:#050505" name="pm_content"
+                                      id="pm_content"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">责任室</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505"
+                                   name="pm_responsibilityRoom"
+                                   id="pm_responsibilityRoom">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAge"
+                               class="col-sm-2 control-label no-padding-right">责任人</label>
+                        <div class="col-sm-9">
+
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505"
+                                   name="pm_responsibilityPerson"
+                                   id="pm_ResponsibilityPerson">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">开始时间</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_begin_date"
+                                   id="pm_begin_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">结束时间</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_end_date"
+                                   id="pm_end_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus"
+                               class="col-sm-2 control-label no-padding-right">提醒时间</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_remind_date"
+                                   id="pm_remind_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务类型</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_type"
+                                   id="pm_type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务状态</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_status"
+                                   id="pm_status">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务进度</label>
+                        <div class="col-sm-9">
+                            <div id="progress_bar_illidan" class="easyui-progressbar" style="width:400px;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">紧急程度</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_urgent_degree"
+                                   id="pm_urgent_degree">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务附件</label>
+                        <div class="col-sm-9">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">
+                                    <a href="../../../public/static/file/test.xlsx" id="downURL" download="">下载附件文件</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">发送人</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_sendPerson"
+                                   id="pm_sendPerson">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">接收人</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_sendPerson"
+                                   id="pm_sendPerson">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName"
+                               class="col-sm-2 control-label no-padding-right">任务备注</label>
+                        <div class="col-sm-9">
+                            <input readonly="on" type="text" class="easyui-validatebox form-control"
+                                   data-options="required:true" style="width:100%;color:#050505" name="pm_remark"
+                                   id="pm_remark">
+                        </div>
+                    </div>
+                    <div class="col-sm-9" align="center" style="margin: 5px">
+                        <!--窗口下方留白-->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看窗口窗体结束-->
+<!--用户组织model-->
+<div class="mydialog">
+    <div id="userOrgModal">
+        <div class="easyui-panel" style="padding:5px;" >
+            <ul id="userOrgTree" class="easyui-tree"></ul>
+        </div>
+    </div>
+</div>
+<!-- 结束 -->
+<!--接收人-->
+<div class="mydialog">
+    <div id="receiveModal">
+        <table id="receiveTable" width="100%;">
+
+        </table>
+    </div>
+</div>
+<!--结束-->
+<!--任务记录区-->
+<div class="mydialog">
+    <div id="recordModal">
+        <div class="input-group">
+            <textarea  style="width: 575px;height: 350px;margin: 5px;resize:none;font-size: 17px;font-family:Microsoft Yahei; " id="pm_record" name="pm_record" class="form-control" placeholder="任务记录..." aria-describedby="basic-addon2"></textarea>
+        </div>
+
+            <div class="input-group">
+                <textarea  style="width: 575px;height: 100px;margin: 5px;resize:none;" id="recordInformation" name="recordInformation" class="form-control" placeholder="输入消息提交到任务记录..." aria-describedby="basic-addon2"></textarea>
+            </div>
+        </div>
+    </div>
+<!--结束-->
+<script>
+    var appurl = '{{projcfg.appurl}}/api/pm/pm/que?status=1';
+    $(document).ready(function () {
+        $(function () {
+            //数据表格加载
+            $('#simpledatatable').datagrid({
+                url:'{{projcfg.appurl}}/api/pm/pm/que?status=1',
+                method:'get',
+                title:"未完成",
+                height:500,
+                striped:true,
+                fitColumns:false,
+                border:true,
+                singleSelect:true,
+                selectOnCheck:false,
+                columns:[[
+                    {field: '_id', checkbox: true},
+                    {"field": "pm_name", "title": "任务名称", "width": 128,"sortable":true},
+                    {"field": "pm_content", "title": "任务内容", "width": 145},
+                    {"field": "pm_responsibilityRoom", "title": "责任室", "width": 90},
+                    {"field": "pm_responsibilityPerson", "title": "责任人", "width": 90},
+                    {"field": "pm_begin_date", "title": "开始时间", "width": 89,"sortable":true},
+                    {"field": "pm_end_date", "title": "结束时间", "width": 89,"sortable":true},
+                    {"field": "pm_type", "title": "任务类型", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            switch (data) {
+                                case '0':
+                                    return '项目管理';
+                                case '1':
+                                    return '日程安排';
+                                case '2':
+                                    return '工作计划';
+                            }
+                        }
+                    },
+                    {
+                        "field": "pm_speed_of_progress", "title": "任务进度", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            return data + '%';
+                        }
+                    },
+                    {
+                        "field": "pm_urgent_degree", "title": "紧急程度", "width": 80,
+                        "formatter": function (data, rowData, rowIndex) {
+                            switch (data) {
+                                case '0':
+                                    return '一般';
+                                case '1':
+                                    return '紧急';
+                                case '2':
+                                    return '非常紧急';
+                            }
+                        }
+                    },
+                    {"field": "pm_sendPerson", "title": "发送人", "width": 60},
+                    {"field": "pm_receivePerson", "title": "接收人", "width": 100,"formatter":
+                            function (data, rowData, rowIndex) {
+                                var param = JSON.stringify(data);
+                                return "<button type='button' class='btn btn-default' onclick='lookUp(" + param + ")' data-title='查看' ><i  class='glyphicon glyphicon-zoom-in' > 查看</i></button>";
+                            }
+                    }
+
+                ]],
+                onDblClickRow:function(rowIndex, rowData){
+                    showDetail();
+                },
+                onLoadSuccess:function(json) {
+                    if(!json.success) {
+                        msgError(json.msg);
+                    }
+                },
+                onLoadError:function() {
+                    msgError('加载数据出现时发生错误,请稍候重试...');
+                },
+                pagination:true,
+                loadMsg:'正在加载...'
+            });
+
+
+            initCombobox();
+
+            var role_code = '{{currentUserRole.role_code}}';
+            var org_code = '{{currentUser.user_org.org_code}}';
+            var login_account = '{{currentUser.login_account}}';
+
+            if (org_code != "000102" && login_account != "yangruofan") {
+                if (role_code == "001" || role_code == "sysadmin" || role_code == "002" || role_code == "005" || role_code == "007") {
+                    $('#org_codeSelectDiv').show();
+                } else {
+                    $('#org_codeSelectDiv').hide();
+                    $('#activeCss').css({
+                        "margin-left": "150px"
+                    });
+                }
+            } else {
+                $('#org_codeSelectDiv').show();
+            }
+
+        });
+    });
+
+    /**
+     * 查看接收人
+     * @returns {boolean}
+     */
+    function lookUp(vv) {
+        var noRepeat={};
+        receiveArr=[];
+        //去掉重复数据
+        for(var i=0;i<vv.length; i++){
+            noRepeat[vv[i].name]=vv[i].name;
+        }
+        //遍历去重后的数据
+        for(var i in noRepeat){
+            receiveArr.push(noRepeat[i]);
+        }
+        $('#receiveTable').prepend('<ul class="list-group" >');
+        for (var i=0;i<receiveArr.length; i++)
+            $('#receiveTable').prepend('<li class="list-group-item" align="center">'+receiveArr[i]+'</li>');
+        $('#receiveTable').append('</ul>');
+
+        $('#receiveModal').show();
+        //获取滚动条到顶部的垂直高度
+        var scrollHei=$(document).scrollTop();
+        $('#receiveModal').mydialog({
+            title: '接收人',
+            width: 200,
+            height: 300,
+            top:scrollHei+100,
+            modal: true,
+            myButtons: [
+                {
+                    text: '关闭',
+                    btnCls: 'btn btn-danger',
+                    handler: function () {
+                        $('#receiveTable').empty();
+                        $('#receiveModal').dialog('close');
+                    }
+                }
+            ]
+        });
+    }
+
+    /**
+     * 查看一条数据
+     * @returns {boolean}
+     */
+    function showDetail() {
+        var rows = $('#simpledatatable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行查看');
+            return false;
+        }
+        var id = rows[0]._id;
+        openPageForLookUp("查看数据", id);
+        // 获取远程数据
+        $.ajax({
+            url: '{{projcfg.appurl}}/api/pm/pm/' + id,
+            type: 'get',
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    var num = data.data[0].pm_speed_of_progress;
+                    $('#lookUpModal').form('load', data.data[0]);
+                    $('#progress_bar_illidan').progressbar('setValue', num);
+                    $('#downURL').attr("href", '../../../public/static/file/' + data.data[0].pmd_enclosure);
+                    $('#downURL').attr("download",data.data[0].pmd_enclosure);
+                }
+                else {
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+
+    }
+
+
+
+    /**
+     * 完成一条数据.判断当前登录用户是否为发送者，发送者则可执行
+     * @returns {boolean}
+     */
+function DonePm() {
+        //获取一行数据
+    var rows = $('#simpledatatable').datagrid('getChecked');
+    if (rows.length != 1) {
+        msgError('提示,请选择一条数据再进行完成');
+        return false;
+    }
+    var id = rows[0]._id;
+    var progress=rows[0].pm_speed_of_progress;
+    if(progress!=100){
+        alert('当前任务进度还未到100%');
+    }
+    msgConfirm('确定完成此条记录？', function (result) {
+        if(result) {
+            if ('{{currentUser._id}}' === rows[0].pm_sendPersonID) {
+                $.ajax({
+                    url: '{{projcfg.appurl}}/api/pm/pm/donePm/' + id,
+                    type: 'get',
+                    success: function (data) {
+                        if (data.success) {
+                            msgSuccess(data.msg);
+                            $('#simpledatatable').datagrid('reload', {});
+                        }
+                        else {
+                            msgError(data.msg + ',错误代码:' + data.code);
+                        }
+                    }
+
+                });
+
+
+            }
+            else
+                msgError('非发起者无法修改任务状态为已完成!' + ',错误代码:' + 1005);
+        }
+    });
+
+}
+
+
+    /**
+     *参数 a 并无实际意义，仅仅只为了与修改方法统一.
+     **/
+    function doAdd(a) {
+        var validate = $('#pmForm').form('validate');
+        if (!validate) {
+            return false;
+        }
+
+        $.ajax({
+            /*server url */
+            url: '{{projcfg.appurl}}/api/pm/pm',
+            type: 'post',
+            /*form id*/
+            data: $('#pmForm').serializeJson(),
+            success: function (data) {
+                if (data.success) {
+                    msgSuccess(data.msg);
+                    fileupload(data.data);
+                    closeDialog();
+                }
+                else {
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+
+    }
+    /**
+     * 修改一条数据
+     * @param value
+     * @returns {boolean}
+     */
+    function doEdit(value) {
+        var validate = $('#pmForm').form('validate');
+        if (!validate) {
+            return false;
+        }
+
+        $.ajax({
+            /*server url */
+            url: '{{projcfg.appurl}}/api/pm/pm/' + value,
+            type: 'put',
+            /*form id*/
+            data: JSON.stringify($('#pmForm').serializeJson()),
+            success: function (data) {
+                if (data.success) {
+                    msgSuccess(data.msg);
+                    fileupload(value);
+
+                    closeDialog();
+                }
+                else {
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+
+    }
+
+
+    
+    /**
+     * 打开修改页面,为修改页面做数据支持
+     * @returns {boolean}
+     */
+    function toEdit() {
+
+        // 获得选择行
+        var rows = $('#simpledatatable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行修改');
+            return false;
+        }
+        var id = rows[0]._id;
+        openPage("修改任务", id, doEdit);
+        // 获取远程数据
+        $.ajax({
+            url: '{{projcfg.appurl}}/api/pm/pm/' + id,
+            type: 'get',
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    var urgent_degree=data.data[0].pm_urgent_degree;
+                    switch (urgent_degree){
+                        case '一般':{data.data[0].pm_urgent_degree='0';break;}
+                        case '紧急':{data.data[0].pm_urgent_degree='1';break;}
+                        case '非常紧急':{data.data[0].pm_urgent_degree='2';break;}
+                    }
+                    $('#pmForm').form('load', data.data[0]);
+                    $('#file-upload').form('load', data.data[0]);
+                }
+                else {
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+    }
+
+    /**
+     * 上传文件使用，在新增被调用
+     * @param id
+     * @returns {boolean}
+     */
+    function fileupload(id) {
+        if (id === null || id === undefined || id === '')
+            id = $('#idForUpload').val();
+        var formData = new FormData($('#file-upload')[0]);
+        $.ajax({
+            url: '{{projcfg.appurl}}/api/pm/pm/upload/' + id,
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                msgSuccess(data.msg);
+                $('#simpledatatable').datagrid('reload', {});
+                $('#pmForm').form('clear');
+               closeDialog();
+            },
+            error: function (data) {
+                msgError('上传文件出现异常,错误代码:0000');
+            }
+        });
+    }
+
+    /**
+     * 关闭窗口
+     **/
+    function closeDialog() {
+        $('#addUpdateModal').dialog('close');
+        clear();
+    }
+
+    /**
+     *打开一个窗口，为修改和增加提供UI支持
+     * @param title
+     * @param value
+     * @param callback
+     */
+
+    function openPage(title, value, callback) {
+        $.ajax({
+            url: '{{projcfg.appurl}}/api/pm/pm/getAllUserOrg',
+            type:'get',
+            success:function (data) {
+                if(data.success){
+                    $('#pm_responsibilityRoom1').combobox('loadData',data.data.org);
+                    $('#pm_responsibilityPerson1').combobox('loadData',data.data.user);
+                }else{
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+        $('#addUpdateModal').show();
+        $('#addUpdateModal').mydialog({
+            title: title,
+            autoOpen: false,
+            width: 600,
+            height: 900,
+            top: 50,
+            modal: true,
+            myButtons: [
+                {
+                    text: '确定',
+                    btnCls: 'btn btn-blue',
+                    handler: function () {
+
+                        callback(value);
+
+                    }
+                },
+                {
+                    text: '关闭',
+                    btnCls: 'btn btn-danger',
+                    handler: function () {
+                        $('#pmForm').form('clear');
+                        closeDialog();
+                    }
+                }
+            ]
+        });
+    }
+
+
+    /**
+     * 打开查看窗口
+     * @param title
+     * @param value
+     */
+    function openPageForLookUp(title, value) {
+        $('#lookUpModal').show();
+        $('#lookUpModal').mydialog({
+            title: title,
+            autoOpen: false,
+            width: 600,
+            height: 900,
+            top: 50,
+            modal: true,
+            myButtons: [
+                {
+                    text: '关闭',
+                    btnCls: 'btn btn-danger',
+                    handler: function () {
+                        $('#lookUpModal').dialog('close');
+                        $('#simpledatatable').datagrid('reload',{});
+                    }
+                }
+            ]
+        });
+    }
+
+    /**
+     * 添加相关查询参数后，重新加载数据表格。
+     */
+    function doSearch() {
+        $('#simpledatatable').datagrid('reload', {'name': $('#sname').val()});
+    }
+
+    /**
+     * 删除一行数据
+     * @returns {boolean}
+     */
+    function doDel() {
+
+        // 获得选择行
+        var rows = $('#simpledatatable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行删除');
+            return false;
+        }
+        var id = rows[0]._id;
+        if ('{{currentUser._id}}' === rows[0].pm_sendPersonID){
+        msgConfirm('确定删除此条记录？', function (result) {
+            if (result) {
+                // 获取远程数据
+                $.ajax({
+                    url: '{{projcfg.appurl}}/api/pm/pm/' + id,
+                    type: 'delete',
+                    data: {},
+                    success: function (data) {
+                        if (data.success) {
+                            msgSuccess(data.msg);
+                            $('#simpledatatable').datagrid('reload',{});
+                        }
+                        else {
+                            msgError(data.msg + ',错误代码:' + data.code);
+                        }
+                    }
+                });
+            }
+        });}else{
+            msgError('非发起者不能删除该任务。');
+        }
+    }
+    /**
+     * 为转发页面提供数据支持
+     * @returns {boolean}
+     */
+    function forWard() {
+        var rows = $('#simpledatatable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行转发');
+            return false;
+        }
+        var id = rows[0]._id;
+        var type=rows[0].pm_type;
+        $('#userOrgModal').show();
+        $('#userOrgModal').mydialog({
+            title: "任务发送",
+            autoOpen: false,
+            width: 600,
+            height:200,
+            top: 50,
+            modal: true,
+            myButtons: [
+                {
+                    text: '确定',
+                    btnCls: 'btn btn-blue',
+                    handler: function () {
+                        getChecked(id,type);
+
+                    }
+                },
+                {
+                    text: '关闭',
+                    btnCls: 'btn btn-danger',
+                    handler: function () {
+                        $('#userOrgModal').dialog('close');
+                    }
+                }
+            ]
+        });
+        $('#userOrgTree').tree({
+            onlyLeafCheck:true,
+            animate: true,
+            checkbox: true,
+            method: 'get',
+            url: '{{projcfg.appurl}}/api/pm/pm/getUserOrg/'+id,
+            loadFilter: function (data) {
+                return data.data;
+            },
+            onclick: function (node) {
+                alert(node.info);
+            }
+        });
+
+    }
+
+    function test() {
+        var nodes = $('#userOrgTree').tree('getChecked');
+        for (var i = 0; i < nodes.length; i++) {
+            alert(nodes[i]);
+        }
+    }
+    /**
+     * 转发一条任务
+     * @param id
+     */
+    function getChecked(id,type) {
+
+        var nodes = $('#userOrgTree').tree('getChecked');
+        receiveObj=[];
+        for (var i = 0; i < nodes.length; i++) {
+            receiveObj.push({id:nodes[i].id,name:nodes[i].text});
+        }
+        receiveObj.push(type);
+
+        $.ajax({
+            url:'{{projcfg.appurl}}/api/pm/pm/forWard/'+id,
+            type: 'POST',
+            data:JSON.stringify(receiveObj),
+            success: function (data) {
+                if (data.success) {
+                    msgSuccess(data.msg);
+                    $('#userOrgModal').dialog('close');
+                    $('#simpledatatable').datagrid('reload',{});
+                }
+                else {
+                    $('#userOrgModal').dialog('close');
+                    msgError(data.msg + ',错误代码:' + data.code);
+                }
+            }
+        });
+
+    }
+
+    /**
+     * 打开任务记录界面
+     * 选择一条任务数据，ajax读取任务的任务记录显示在
+     * @returns {boolean}
+     */
+    
+    function openPmRecord() {
+        var rows = $('#simpledatatable').datagrid('getChecked');
+        if (rows.length != 1) {
+            msgError('提示,请选择一条数据再进行删除');
+            return false;
+        }
+
+        var id=rows[0]._id;
+        var type=rows[0].pm_type;
+        if(type==='0'){
+            $.ajax({
+                url: '{{projcfg.appurl}}/api/pm/pm/' + id,
+                type: 'get',
+                data: {},
+                success: function (data) {
+                    if (data.success) {
+                        recordList=data.data[0].pm_record;
+                        $("#pm_record").val('');
+                        for(var i in recordList){
+
+                            if(recordList[i].senderName!==undefined&&recordList[i].senderName!==null&&recordList[i].senderName!==''&&recordList[i].message!==undefined&&recordList[i].message!==''&&recordList[i].message!==null)
+                                $("#pm_record").val($("#pm_record").val()+recordList[i].senderName+":"+recordList[i].message+"\n"+"\n");
+                        }
+                        $("#recordInformation").val('');
+                    }
+                    else {
+                        msgError(data.msg + ',错误代码:' + data.code);
+                    }
+                }
+            });
+
+            $('#recordModal').show();
+            $('#recordModal').mydialog({
+                title: '任务记录',
+                width: 600,
+                height: 550,
+                top: 50,
+                modal: true,
+                myButtons: [
+                    {
+                        text: '添加记录',
+                        btnCls: 'btn btn-blue',
+                        handler: function () {
+                        var inf=$("#recordInformation").val();
+                        var user="{{currentUser.user_name}}";
+                        var user_id="{{currentUser._id}}";
+                       // $("#pm_record").val($("#pm_record").val()+user+":"+inf+"\n");
+                        if(inf!==''&&inf!==undefined&&inf!==null){
+                            $.ajax({
+                                url: '{{projcfg.appurl}}/api/pm/pm/updatePmRecord/'+id,
+                                type: 'post',
+                                data: {message:inf,senderName:user,senderId:user_id},
+                                success: function (data) {
+                                    if (data.success) {
+                                        recordList=data.data[0].pm_record;
+                                        $("#pm_record").val('');
+                                        for(var i in recordList){
+
+                                            if(recordList[i].senderName!==undefined&&recordList[i].senderName!==null&&recordList[i].senderName!==''&&recordList[i].message!==undefined&&recordList[i].message!==''&&recordList[i].message!==null)
+                                            $("#pm_record").val($("#pm_record").val()+recordList[i].senderName+":"+recordList[i].message+"\n"+"\n");
+                                        }
+                                        $("#recordInformation").val('');
+                                        
+                                    }
+                                    else {
+                                        msgError(data.msg + ',错误代码:' + data.code);
+                                    }
+                                }
+                            });
+                        }
+
+                        }
+                    },
+                    {
+                        text: '关闭',
+                        btnCls: 'btn btn-danger',
+                        handler: function () {
+                            $("#recordInformation").val('');
+                            $("#pm_record").val('');
+                            $('#recordModal').dialog('close');
+                        }
+                    }
+                ]
+            });
+        }
+    }
+    function random() {
+
+        var myDate = new Date();
+        //获取当前时间
+        var datatime=myDate.getFullYear().toString()+(myDate.getMonth()+1).toString()+myDate.getDate().toString()+myDate.getHours().toString()+myDate.getMinutes().toString()+myDate.getSeconds().toString();
+        $("#pm_no1").val("WN"+datatime+""+Math.round(Math.random()*999));
+
+    }
+</script>
